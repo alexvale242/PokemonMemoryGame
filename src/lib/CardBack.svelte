@@ -27,6 +27,13 @@
       bottom: 10px;
       transform: rotate(180deg);
     }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      border-radius: 10px;
+    }
   </style>
   
   <div class="card-back">
