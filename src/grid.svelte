@@ -1,4 +1,6 @@
 <script lang="ts">
+    import CardBack from "./lib/CardBack.svelte";
+
   export let cards = Array.from({ length: 24 }, (_, i) => ({
       id: i,
       position: i,
@@ -70,7 +72,7 @@
           Front {card.id}
         </div>
         <div class="card-back">
-          Back {card.id}
+          <CardBack />
         </div>
       </div>
     </div>
