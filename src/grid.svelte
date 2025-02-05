@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   export let cards = Array.from({ length: 24 }, (_, i) => ({
       id: i,
       position: i,
       flipped: false
   }));
 
-  function moveCard(id, newPosition) {
+  function moveCard(id: number, newPosition: number) {
       const card = cards.find(card => card.id === id);
       if (card) {
           card.position = newPosition;
@@ -13,7 +13,7 @@
       }
   }
 
-  function flipCard(id) {
+  function flipCard(id: number) {
       const card = cards.find(card => card.id === id);
       if (card) {
           card.flipped = !card.flipped;
@@ -22,7 +22,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .grid {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
