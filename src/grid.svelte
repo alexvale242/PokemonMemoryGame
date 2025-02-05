@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import confetti from 'canvas-confetti';
+    import CardBack from './lib/CardBack.svelte';
 
   // Create pairs of cards and shuffle them
   export let cards = shuffle(Array.from({ length: 12 }, (_, i) => [
@@ -99,12 +100,15 @@
   .grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* Adjusted to fit 24 cards */
-    gap: 10px;
+    gap: 5px;
   }
   .card {
-    width: 100px;
+    width: 150px;
     height: 150px;
     perspective: 1000px;
+    padding: 1rem;
+    font-size: 0;
+    line-height: 0;
     cursor: pointer;
   }
   .card-inner {
@@ -123,9 +127,9 @@
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    border-radius: 10px;
   }
   .card-front {
-    background-color: #bbb;
     color: black;
   }
   .card-back {
@@ -152,7 +156,7 @@
   <div class="card" class:flipped={card.flipped} on:click={() => flipCard(index)}>
     <div class="card-inner">
     <div class="card-front">
-      Front {card.id}
+      <CardBack />
     </div>
     <div class="card-back">
       {#if card.image}
