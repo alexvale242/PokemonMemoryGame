@@ -5,7 +5,7 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 export default defineConfig({
     plugins: [svelte()],
     assetsInclude: ['**/*.png', '**/*.svg', '**/*.ico'],
-    base: '/',
+    base: '/PokemonMemoryGame',
     build: {
         outDir: './docs',
     },
